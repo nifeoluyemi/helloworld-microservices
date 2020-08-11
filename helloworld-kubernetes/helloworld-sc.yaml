@@ -1,0 +1,14 @@
+---
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: helloworld-storage-class
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+
+# leave filesystem as default ext4
+# because mongo container /data/db
+# /dev/vda1    ext4    /data/db

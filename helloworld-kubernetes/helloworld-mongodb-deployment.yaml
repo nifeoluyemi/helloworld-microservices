@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-mongo
+spec:
+  selector:
+    matchLabels:
+      role: database
+      env: helloworld
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: database
+        env: helloworld
+    spec:
+      containers:
+      - name: mongo
+        image: mongo:4.2.6
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+          - name: helloworld-mongo-pvc
+            mountPath: /data/db
+      volumes:
+        - name: helloworld-mongo-pvc
+          persistentVolumeClaim:
+            claimName: helloworld-mongo-pvc

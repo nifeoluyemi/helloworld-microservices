@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-flask
+  labels:
+    run: helloworld-flask
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      run: helloworld-flask
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: helloworld-flask
+    spec:
+      containers:
+      - name: helloworld-flask
+        image: us.icr.io/helloworld-demo/helloworld-flask
+        env:
+        - name: MONGO_DB_CONN_STR
+          value: "mongodb://helloworld-mongo-service:27017"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,7 @@
+/helloworld-venv
+helloworld-venv
+/helloworld-react/node_modules
+/helloworld-terraform/.terraform
+/helloworld-terraform/terraform.tfstate
+/helloworld-terraform/terraform.tfstate.backup
+__pycache__/

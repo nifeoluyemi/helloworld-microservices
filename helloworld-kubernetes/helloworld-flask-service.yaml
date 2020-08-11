@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-flask-service
+  labels:
+    run: helloworld-flask
+spec:
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+  clusterIP: None
+  selector:
+    run: helloworld-flask

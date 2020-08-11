@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: helloworld-mongo-pv
+  labels:
+    role: database
+    env: helloworld
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: helloworld-storage-class
+  hostPath:
+    path: /mnt

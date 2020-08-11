@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-mongo-service
+  labels:
+    name: helloworld-mongo-service
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+      protocol: TCP
+  clusterIP: None
+  selector:
+    role: database
+    env: helloworld

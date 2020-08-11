@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-react
+  labels:
+    role: frontend
+    env: helloworld
+spec:
+  selector:
+    matchLabels:
+      role: frontend
+      env: helloworld
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        role: frontend
+        env: helloworld
+    spec:
+      containers:
+      - name: app
+        image: us.icr.io/helloworld-demo/helloworld-react
+        env:
+        - name: REACT_APP_BASE_API_URL
+          value: "http://helloworld-flask-service:5000/api/v1"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000

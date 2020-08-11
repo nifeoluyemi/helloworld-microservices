@@ -1,0 +1,31 @@
+---
+version: '3.3'
+
+services:
+  mongo:
+    container_name: helloworld-mongo
+    ports:
+      - "27017:27017"
+    image: mongo:4.2.6
+    restart: always
+
+  flask:
+    build: helloworld-flask
+    container_name: helloworld-flask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_DB_CONN_STR=mongodb://127.0.0.1:27017
+
+  react:
+    build: helloworld-react
+    container_name: helloworld-react
+    ports:
+      - "3000:3000"
+    depends_on:
+      - flask
+    environment:
+      - REACT_APP_BASE_API_URL=http://127.0.0.1:5000/api/v1
+    stdin_open: true
