@@ -5,7 +5,7 @@
 
 - Create an IBM Kubernetes Cluster on IBM Cloud
 - Follow the the "Access" guidelines in your cluster dashboard on IBM Cloud to connect to your cluster in your terminal
-![Add new API Key](https://github.ibm.com/nife/helloworld-ms/blob/master/helloworld-media/ibm-ks-connect.png)
+![Add new API Key](https://github.com/nifeoluyemi/helloworld-microservices/blob/master/helloworld-media/ibm-ks-connect.png)
 
 In the same terminal, Run the following commands
 

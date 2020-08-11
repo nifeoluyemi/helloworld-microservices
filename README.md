@@ -4,10 +4,10 @@ This is a Hello World project where you can add a programming language and its h
 
 ### Web UI
 - Add a new Language with Hello World code (URL: /new)
-![Add new Language](https://github.ibm.com/nife/helloworld-ms/blob/master/helloworld-media/new-language.png)
+![Add new Language](https://github.com/nifeoluyemi/helloworld-microservices/blob/master/helloworld-media/new-language.png)
 
 - List all Languages (URL: /)
-![All Languages](https://github.ibm.com/nife/helloworld-ms/blob/master/helloworld-media/all-languages.png)
+![All Languages](https://github.com/nifeoluyemi/helloworld-microservices/blob/master/helloworld-media/all-languages.png)
 
 
 ## Steps to Run the Project
@@ -19,7 +19,7 @@ Create an IBM Cloud account if you haven't done so already
 - Open IBM Cloud console
 - Go to Manage > Access (IAM)
 - In the new window, on the left navigation menu, select API Keys, and Create an IBM Cloud API Key.
-![Add new API Key](https://github.ibm.com/nife/helloworld-ms/blob/master/helloworld-media/apikeys.png)
+![Add new API Key](https://github.com/nifeoluyemi/helloworld-microservices/blob/master/helloworld-media/apikeys.png)
 - Copy the key and store it somewhere safe
 
 ### Create an IBM Cloud Container Registry
